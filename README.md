@@ -19,16 +19,29 @@ Before you begin, ensure you have the following installed:
 
 
 ## For Configuring Virtual Host
-1. Firstly, create a file on the web server's root directory (e.g., htdocs in XAMPP) with required extention (e. g., .php/.html).
-2. If you are using XAMPP on Windows, the httpd-vhosts.conf file is typically located in the apache\conf\extra directory within your XAMPP installation. For example, 'C:\xampp\apache\conf\extra\httpd-vhosts.conf'. Open this file in the editor with administrative permission. then add the following instructions.
-      <VirtualHost *:80>
-         DocumentRoot "C:/xampp/htdocs/folder_name/file_name.php"
-         ServerName mywebsite.com
+### 1. Create Web Page: 
+Create a file on the web server's root directory (e.g., htdocs in XAMPP) with required extention (e. g., .php/.html).
+### 2. Edit httpd-vhosts.conf:
+If you are using XAMPP on Windows, this file is typically located in the apache\conf\extra directory within the XAMPP installation (e.g., 'C:\xampp\apache\conf\extra\httpd-vhosts.conf'). Open the file in the editor with administrative permission and add the following instructions.<br/>
+```
+      <VirtualHost *:80><br>
+            DocumentRoot "C:/xampp/htdocs/folder_name/file_name.php"<br/>
+            ServerName mywebsite.com<br/>
       </VirtualHost>
-3. With administrator privileges, edit the 'C:\Windows\System32\drivers\etc\hosts' file using the following instructions.
+```
+Adjust the DocumentRoot and ServerName as needed.
+### 3. Edit hosts File
+With administrator privileges, edit the 'C:\Windows\System32\drivers\etc\hosts' file using the following instructions.
+```
       127.0.0.1      mywebsite.com
-4. Restart the apache server on Xampp.
-5. You've successfully set up virtual hosts on your server. you can use 'mywebsite.com' url to run your website.
+```
+### 4. Restart Apache Server
+Restart the Apache server in XAMPP to apply the changes.
+### 5. Access Your Website
+You've successfully set up virtual hosts on your server. you can use 'mywebsite.com' url to run your website.
+
+## Note: 
+Ensure to replace 'folder_name' with the actual folder name and adjust paths accordingly. Make sure you have administrative privileges when editing configuration files.
 
 
 
